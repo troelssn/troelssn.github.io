@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mindre ølbrikker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=IBM+Plex+Mono:wght@400&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+body { margin: 0 }
+svg { display: block }
+/* Layout: et roligt katalogblad, tre brikker side om side som prøver på et bord */
+:root {
+  --bg: #ECEDEA;
+  --surface: #F7F7F5;
+  --fg: #1C1F1E;
+  --muted: #5E6562;
+  --line: #CDD1CD;
+  --ui: "Instrument Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161918; --surface: #1F2321; --fg: #E8EAE7; --muted: #9AA19D; --line: #333936; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #161918; --surface: #1F2321; --fg: #E8EAE7; --muted: #9AA19D; --line: #333936; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 10px; max-width: 68ch; margin-bottom: 40px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; font-weight: 600; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; gap: 16px; align-content: start; min-width: 0; }
+.stage { display: grid; place-items: center; padding: 8px 0 4px; }
+.stage svg { width: 100%; max-width: 280px; height: auto; filter: drop-shadow(0 6px 14px rgb(0 0 0 / .18)); }
+h2 { margin: 0; font-size: 20px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; }
+h2 .tag { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
+article p { margin: 0; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 14px; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+dd { margin: 0; }
+
+.notes { margin-top: 36px; display: grid; gap: 10px; max-width: 72ch; }
+.notes h3 { margin: 0; font-size: 16px; }
+.notes ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 4px; }
+.notes b { color: var(--fg); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Ølbrik · Ø 100 mm · sort + knækket hvid</div>
+    <h1>Mindre Puls: kapslen og to nye</h1>
+    <p>Kronkorken er med igen, og ved siden af er der to nye forslag. Alle tre bruger det samme logo, EKG-linjen med M'et. Det er formen, der viser, at det handler om øl.</p>
+  </header>
+
+  <section class="grid">
+    <!-- C: Kronkorken -->
+    <article>
+      <div class="stage">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Forslag C: brikken har form som en kronkapsel med 21 takker, med EKG-linjen og MINDRE BIER">
+          <polygon points="100.0,2.0 113.6,10.0 128.9,6.4 139.5,18.0 155.2,19.0 161.9,33.3 176.6,38.9 178.8,54.5 191.2,64.2 188.7,79.8 197.7,92.7 190.7,106.8 195.5,121.8 184.7,133.2 184.9,149.0 171.1,156.7 166.7,171.8 151.3,175.2 142.5,188.3 126.8,187.0 114.6,196.9 100.0,191.0 85.4,196.9 73.2,187.0 57.5,188.3 48.7,175.2 33.3,171.8 28.9,156.7 15.1,149.0 15.3,133.2 4.5,121.8 9.3,106.8 2.3,92.7 11.3,79.8 8.8,64.2 21.2,54.5 23.4,38.9 38.1,33.3 44.8,19.0 60.5,18.0 71.1,6.4 86.4,10.0"
+            fill="#16191A" stroke="#16191A" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="100" cy="100" r="82" fill="none" stroke="#F1F1EC" stroke-width="2"/>
+          <polyline points="22,96 52,96 58,90 64,96 78,96 86,60 100,88 114,60 122,104 128,96 142,96 150,88 158,96 178,96"
+            fill="none" stroke="#F1F1EC" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="100" y="140" text-anchor="middle" font-family="Jost, Futura, sans-serif" font-weight="500" font-size="19" letter-spacing="9" fill="#F1F1EC">MINDRE</text>
+          <text x="100" y="159" text-anchor="middle" font-family="Jost, Futura, sans-serif" font-weight="500" font-size="9" letter-spacing="4" fill="#F1F1EC">BIER</text>
+        </svg>
+      </div>
+      <h2>Kronkorken <span class="tag">beholdt</span></h2>
+      <p>Brikken har form som en kronkapsel med 21 takker, ligesom en rigtig ølkapsel, og takkerne rimer på EKG-kurven. Man kan se, at det er øl, før man har læst noget.</p>
+      <dl>
+        <dt>Øl via</dt><dd>Kapselform, ordet "Bier"</dd>
+        <dt>Print</dt><dd>Takkerne er 3,5 mm dybe, så de ikke knækker.</dd>
+      </dl>
+    </article>
+
+    <!-- G: Flasche -->
+    <article>
+      <div class="stage">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Forslag G: én sammenhængende EKG-linje der bliver til omridset af en liggende ølflaske">
+          <circle cx="100" cy="100" r="98" fill="#16191A"/>
+          <path d="M12,100 L40,100 L40,78 L58,78 L66,52 L77,70 L88,52 L94,86 L98,78 L116,78 C130,78 134,92 146,92 L166,92 L166,108 L146,108 C134,108 130,122 116,122 L40,122 L40,100"
+            fill="none" stroke="#F1F1EC" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="167" y="89" width="6" height="22" rx="1" fill="#F1F1EC"/>
+          <line x1="173" y1="100" x2="188" y2="100" stroke="#F1F1EC" stroke-width="4" stroke-linecap="round"/>
+          <text x="100" y="160" text-anchor="middle" font-family="Jost, Futura, sans-serif" font-weight="500" font-size="19" letter-spacing="9" fill="#F1F1EC">MINDRE</text>
+        </svg>
+      </div>
+      <h2>Flasche <span class="tag">forslag G</span></h2>
+      <p>Den flade EKG-linje kommer ind fra venstre og tegner en liggende ølflaske i én streg uden at løfte pennen. Hjerteslaget er på flaskens overkant. Efter kapslen går linjen videre ud i kanten. Linjen og flasken er den samme figur.</p>
+      <dl>
+        <dt>Øl via</dt><dd>Flaskesilhuet</dd>
+        <dt>Udtryk</dt><dd>Det mest grafiske, en "one-line drawing"</dd>
+        <dt>Print</dt><dd>Kun en streg på 2 mm og en lille kapsel. Meget nem.</dd>
+      </dl>
+    </article>
+
+    <!-- H: Hopfen -->
+    <article>
+      <div class="stage">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Forslag H: en humlekogle tegnet med takker over EKG-linjen og MINDRE">
+          <circle cx="100" cy="100" r="98" fill="#16191A"/>
+          <g fill="none" stroke="#F1F1EC" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <line x1="100" y1="22" x2="100" y2="32"/>
+            <path d="M100,32 C116,34 118,54 100,70 C82,54 84,34 100,32 Z"/>
+            <polyline points="89,42 100,47 111,42"/>
+            <polyline points="88,51 100,57 112,51"/>
+            <polyline points="91,60 100,65 109,60"/>
+          </g>
+          <polyline points="14,110 52,110 58,104 64,110 78,110 86,80 100,100 114,80 122,118 128,110 142,110 150,104 158,110 186,110"
+            fill="none" stroke="#F1F1EC" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="100" y="152" text-anchor="middle" font-family="Jost, Futura, sans-serif" font-weight="500" font-size="19" letter-spacing="9" fill="#F1F1EC">MINDRE</text>
+        </svg>
+      </div>
+      <h2>Hopfen <span class="tag">forslag H</span></h2>
+      <p>Over pulsen hænger en enkelt humlekogle, og dens skæl er tegnet som små takker. Det er de samme vinkler som i EKG-udslaget, så koglen og linjen ser ud til at høre sammen. Humle er det råstof, som alle forbinder med øl.</p>
+      <dl>
+        <dt>Øl via</dt><dd>Humlekogle</dd>
+        <dt>Udtryk</dt><dd>Roligt og symmetrisk, næsten som et apoteksmærke</dd>
+        <dt>Print</dt><dd>Koglen er ca. 20 mm høj med 1,2 mm streger. Det kan printes fint med 0,4-dyse.</dd>
+      </dl>
+    </article>
+  </section>
+
+  <section class="notes">
+    <h3>Til valget</h3>
+    <ul>
+      <li><b>Kan kombineres:</b> flasken fra G eller humlen fra H kan også sidde inde i kapselformen fra C.</li>
+      <li><b>Logo alene:</b> i G er flasken en del af logoet. I C og H er logoet stadig kun EKG-linjen.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
