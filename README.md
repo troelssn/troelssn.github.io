@@ -15,3 +15,4 @@ Hvert projekt har sin egen mappe med en `index.html`, fx `mindre/` → https://t
 | Mappe | Indhold |
 |-------|---------|
 | [`mindre/`](mindre/) | Designforslag til ølbrikker til øllet Mindre |
+| [`halstiern/`](halstiern/) | Designforslag til ølbrikker til Halstiern Bryghus |
