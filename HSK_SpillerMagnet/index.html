@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>HSK SpillerMagnet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+body { margin: 0 }
+/* Layout: et kampprogram for én magnet: trøjen og nøgletal øverst, et snit i skala, så de to arbejdsgange */
+:root {
+  --bg: #ECEEF1;
+  --surface: #F8F9FB;
+  --fg: #1A1D22;
+  --muted: #5B6370;
+  --line: #CBD0D8;
+  --blue: #2149A0;
+  --jersey: #1B1C1F;
+  --horse: #EEF0F3;
+  --metal: #8E98A4;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --ui: "Instrument Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #14171C; --surface: #1C2027; --fg: #E7EAEF; --muted: #9CA4B1; --line: #313844; --blue: #7C9BE6; --jersey: #2C3038; --metal: #7C8794; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #14171C; --surface: #1C2027; --fg: #E7EAEF; --muted: #9CA4B1; --line: #313844; --blue: #7C9BE6; --jersey: #2C3038; --metal: #7C8794; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px; }
+.eyebrow, dt, .label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+header { display: grid; gap: 10px; max-width: 68ch; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(40px, 7vw, 68px); line-height: .95; margin: 0; letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
+h1 span { color: var(--blue); }
+header p { margin: 0; color: var(--muted); }
+.swatches { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.swatches span { display: inline-flex; align-items: center; gap: 6px; }
+.swatches i { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
+.stage img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 4px; }
+.specs { display: grid; gap: 18px; min-width: 0; }
+.specs h2, section h2 { font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.1; margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; border-top: 1px solid var(--line); padding-top: 14px; font-variant-numeric: tabular-nums; }
+dt { font-size: 11.5px; padding-top: 3px; }
+dd { margin: 0; }
+.time { display: flex; align-items: baseline; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
+.time b { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--blue); }
+
+section { display: grid; gap: 14px; min-width: 0; }
+section > p { margin: 0; max-width: 68ch; color: var(--muted); }
+.diagram { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 8px; }
+.diagram svg { display: block; width: 100%; min-width: 560px; height: auto; }
+.diagram text { font-family: var(--mono); font-size: 12px; fill: var(--muted); }
+.diagram .hi { fill: var(--blue); }
+.s-base { fill: var(--jersey); }
+.s-relief { fill: var(--horse); stroke: var(--jersey); stroke-width: 1; }
+.s-pocket { fill: var(--bg); stroke: var(--muted); stroke-width: 1; }
+.s-magnet { fill: var(--metal); }
+.s-pause { stroke: var(--blue); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.s-guide { stroke: var(--line); stroke-width: 1; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.steps article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 10px; }
+ol li { counter-increment: s; display: grid; grid-template-columns: 28px 1fr; gap: 10px; }
+ol li::before { content: counter(s); font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; color: var(--blue); }
+.note { margin: 0; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+code { font-family: var(--mono); font-size: .92em; }
+
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Spillermagnet · 30 × 28 mm · 3D-print</div>
+    <h1>HSK <span>Spiller</span>magnet</h1>
+    <p>En fodboldtrøje i HSK's sort-blå striber med hesten på brystet og spillerens navn under. Magneten er gemt inde i trøjen, så bagsiden er helt glat. Navnet kan rettes i Bambu Studio, så der kan printes én til hver spiller.</p>
+    <div class="swatches" aria-label="Farver">
+      <span><i style="background: #1B1C1F"></i>Sort</span>
+      <span><i style="background: #2149A0"></i>Blå</span>
+      <span><i style="background: #EEF0F3"></i>Hvid</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="stage">
+      <img src="HSK_SpillerMagnet.png" alt="Sort trøje med to blå striber, en hvid hest på brystet og teksten Navn under" width="800" height="800">
+    </div>
+    <div class="specs">
+      <h2>Mål og print</h2>
+      <dl>
+        <dt>Trøje</dt><dd>ca. 30 × 28 mm, 6 mm tyk</dd>
+        <dt>Relief</dt><dd>Hest og navn står ca. 0,4 mm op. Hesten er 15 % større end i første version.</dd>
+        <dt>Magnet</dt><dd>Ø12 × 2 mm</dd>
+        <dt>Lomme</dt><dd>Ø12,3 × 2,2 mm, fra Z 1,8 til Z 4,0</dd>
+      </dl>
+      <dl>
+        <dt>Printer</dt><dd>Bambu Lab P1S, 0,2 mm dyse</dd>
+        <dt>Lag</dt><dd>0,10 mm, også første lag</dd>
+        <dt>Materiale</dt><dd>PLA i alle tre farver</dd>
+        <dt>Vægge</dt><dd>4</dd>
+        <dt>Infill</dt><dd>15 %</dd>
+      </dl>
+      <div class="time"><b>1 t 9 min</b><span class="label">pr. magnet, uden pausen</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Snit gennem trøjen</h2>
+    <p>Lommen til magneten ligger midt i trøjen. Printeren holder pause, når lommen er færdig, og lukker den med de næste lag. Højderne er i skala. Lommens placering i bredden er tegnet skematisk.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 820 206" role="img" aria-label="Snit: 6 mm base med 0,4 mm relief på toppen. Lommen går fra Z 1,8 til Z 4,0 mm, og magneten på 2 mm ligger i bunden af den. Pausen er efter lag 40 ved Z 4,0.">
+        <line class="s-guide" x1="20" y1="170" x2="600" y2="170"/>
+        <rect class="s-base" x="40" y="62" width="540" height="108"/>
+        <rect class="s-relief" x="160" y="54.8" width="90" height="7.2"/>
+        <rect class="s-relief" x="262" y="54.8" width="98" height="7.2"/>
+        <rect class="s-relief" x="372" y="54.8" width="68" height="7.2"/>
+        <rect class="s-pocket" x="199.3" y="98" width="221.4" height="39.6"/>
+        <rect class="s-magnet" x="202" y="101.6" width="216" height="36"/>
+        <line class="s-pause" x1="20" y1="98" x2="600" y2="98"/>
+        <line class="s-guide" x1="580" y1="55" x2="610" y2="55"/>
+        <line class="s-guide" x1="580" y1="137.6" x2="610" y2="137.6"/>
+        <text x="618" y="59">Z 6,4 · top af relief</text>
+        <text x="618" y="102" class="hi">Z 4,0 · pause efter lag 40</text>
+        <text x="618" y="118">lag 41 (Z 4,1) lukker</text>
+        <text x="618" y="141.6">Z 1,8 · bund af lomme</text>
+        <text x="618" y="174">Z 0 · printplade</text>
+        <text x="310" y="124" text-anchor="middle" style="fill: var(--jersey)">magnet Ø12 × 2</text>
+        <line class="s-guide" x1="40" y1="186" x2="580" y2="186"/>
+        <line class="s-guide" x1="40" y1="180" x2="40" y2="192"/>
+        <line class="s-guide" x1="580" y1="180" x2="580" y2="192"/>
+        <text x="310" y="202" text-anchor="middle">ca. 30 mm</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sådan gør du</h2>
+    <div class="steps">
+      <article>
+        <div class="label">Skift navn</div>
+        <ol>
+          <li><span>Åbn 3MF-filen <b>som projekt</b> i Bambu Studio.</span></li>
+          <li><span>Find delen <b>Navn (Edit Text)</b> under <b>HSK Navn</b>.</span></li>
+          <li><span>Højreklik, vælg <b>Edit Text</b>, og skriv spillerens navn i stedet for <code>Navn</code>.</span></li>
+          <li><span>Tjek, at et langt navn holder sig inden for trøjen. Gør skriften mindre, hvis det er nødvendigt.</span></li>
+          <li><span>Slice igen.</span></li>
+        </ol>
+        <p class="note">STL-filen indeholder kun formen. Brug 3MF-filen, når du vil ændre navn, farver eller printindstillinger.</p>
+      </article>
+      <article>
+        <div class="label">Indsæt magneten</div>
+        <ol>
+          <li><span>Printeren holder selv pause efter lag 40, ved Z 4,0 mm.</span></li>
+          <li><span>Tryk magneten helt ned i lommen. Skal flere magneter vende ens, så tjek polerne først.</span></li>
+          <li><span>Fortsæt printet. Lag 41 lukker lommen.</span></li>
+        </ol>
+        <p class="note">Pausen er tjekket i den slicede model med indstillingerne her. Ændrer du laghøjde, orientering eller form, så find pausens lag igen i Preview.</p>
+      </article>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

@@ -17,3 +17,4 @@ Hvert projekt har sin egen mappe med en `index.html`, fx `mindre/` → https://t
 | [`mindre/`](mindre/) | Designforslag til ølbrikker til øllet Mindre |
 | [`halstiern/`](halstiern/) | Designforslag til ølbrikker til Halstiern Bryghus |
 | [`tryllestav/`](tryllestav/) | Designforslag til en tryllestav i sort, brun og mos |
+| [`HSK_SpillerMagnet/`](HSK_SpillerMagnet/) | Spillermagnet formet som en HSK-trøje med hest og navn |
