@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tryllestave i sort, brun og mos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+body { margin: 0 }
+/* Layout: et skuffebræt med tre stave lagt vandret under hinanden, hver med sin målestok */
+:root {
+  --bg: #ECEEE8;
+  --surface: #F8F9F5;
+  --fg: #1B1F1A;
+  --muted: #5C665A;
+  --line: #CBD2C6;
+  --moss: #5E7D2E;
+  --ink: #16191A;
+  --bark: #7A4E2D;
+  --display: "Fraunces", Georgia, serif;
+  --ui: "Instrument Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151916; --surface: #1D221E; --fg: #E6EAE3; --muted: #9AA596; --line: #323A32; --moss: #8DAF55; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151916; --surface: #1D221E; --fg: #E6EAE3; --muted: #9AA596; --line: #323A32; --moss: #8DAF55; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 10px; max-width: 68ch; margin-bottom: 36px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-size: clamp(30px, 4.4vw, 44px); line-height: 1.08; margin: 0; font-weight: 600; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--moss); }
+header p { margin: 0; color: var(--muted); }
+.swatches { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.swatches span { display: inline-flex; align-items: center; gap: 6px; }
+.swatches i { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--line); }
+
+.list { display: grid; gap: 20px; }
+article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; gap: 14px; min-width: 0; }
+.stage { overflow-x: auto; }
+.stage img { display: block; width: 100%; min-width: 560px; height: auto; border-radius: 4px; }
+.ruler { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 4px; min-width: 560px; font-variant-numeric: tabular-nums; }
+.body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 720px) { .body { grid-template-columns: 1fr; } }
+h2 { margin: 0 0 6px; font-family: var(--display); font-size: 24px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; }
+h2 .tag { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
+article p { margin: 0; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 13.5px; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+dd { margin: 0; }
+
+.notes { margin-top: 36px; display: grid; gap: 10px; max-width: 72ch; }
+.notes h3 { margin: 0; font-size: 16px; }
+.notes ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 4px; }
+.notes b { color: var(--fg); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Tryllestav · 200 mm · Ø 10 mm · 3 farver</div>
+    <h1>Brun gren, sort og <em>mos i toppen</em></h1>
+    <p>Birk blev valgt, nu i brun i stedet for hvid. Ved siden af er der to nye forslag i de samme farver. På alle tre sidder mosset kun i toppen. Det er små knopper, så det også kan mærkes.</p>
+    <div class="swatches" aria-label="Farver">
+      <span><i style="background: var(--ink)"></i>Sort</span>
+      <span><i style="background: var(--bark)"></i>Brun</span>
+      <span><i style="background: #5E7D2E"></i>Mosgrøn</span>
+    </div>
+  </header>
+
+  <section class="list">
+    <article>
+      <div class="stage">
+        <img src="Tryllestav_birk.png" alt="Brun stav med korte sorte barkstreger og mos i toppen">
+        <div class="ruler"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 mm</span></div>
+      </div>
+      <div class="body">
+        <div>
+          <h2>Birk <span class="tag">valgt</span></h2>
+          <p>Den valgte gren, nu med brun bark. De korte sorte streger og de to mørke knaster er de samme som før. Mosset sidder kun i toppen og slutter med en takket kant. Helt ude i spidsen er der en lille sort ende.</p>
+        </div>
+        <dl>
+          <dt>Udtryk</dt><dd>Fundet i skoven</dd>
+          <dt>Mest</dt><dd>Brun, med lidt sort</dd>
+          <dt>Print</dt><dd>Stregerne er kun 0,6 mm dybe i overfladen</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article>
+      <div class="stage">
+        <img src="Tryllestav_slyng.png" alt="Brun stav med en sort slyngplante, der snor sig op til mosset i toppen">
+        <div class="ruler"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 mm</span></div>
+      </div>
+      <div class="body">
+        <div>
+          <h2>Slyng <span class="tag">nyt forslag</span></h2>
+          <p>En sort slyngplante snor sig op ad den brune stav, én omgang for hver 42 mm, og forsvinder ind i mosset i toppen. Håndtaget har en sort endekappe.</p>
+        </div>
+        <dl>
+          <dt>Udtryk</dt><dd>Levende og lidt vildt</dd>
+          <dt>Mest</dt><dd>Brun, med én sort streg</dd>
+          <dt>Print</dt><dd>Slyngen er ca. 4 mm bred</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article>
+      <div class="stage">
+        <img src="Tryllestav_troldmand.png" alt="Stav med sort greb med brune ringe, brunt skaft, tre sorte ringe og mos i toppen">
+        <div class="ruler"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 mm</span></div>
+      </div>
+      <div class="body">
+        <div>
+          <h2>Troldmand <span class="tag">nyt forslag</span></h2>
+          <p>Et sort greb med tre smalle brune ringe, så man kan se, hvor man skal holde. Skaftet er brunt, og under mosset sidder tre sorte ringe, der bliver tættere mod toppen.</p>
+        </div>
+        <dl>
+          <dt>Udtryk</dt><dd>Mest som en rigtig tryllestav</dd>
+          <dt>Mest</dt><dd>Lige meget sort og brun</dd>
+          <dt>Print</dt><dd>Ringene er 2-3 mm brede</dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <section class="notes">
+    <h3>Til valget</h3>
+    <ul>
+      <li><b>Mål:</b> 200 mm lang og Ø 10 mm ved håndtaget. Den bliver smallere mod spidsen (Ø 7,5 mm). Mosset ligger, hvor staven er smallest, så det kommer ikke over 10 mm.</li>
+      <li><b>Print:</b> staven printes liggende med en flad stribe på undersiden, så den ikke skal have support.</li>
+      <li><b>Kan blandes:</b> Birk kan fx få Slyngs sorte endekappe eller Troldmands sorte ringe under mosset.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
