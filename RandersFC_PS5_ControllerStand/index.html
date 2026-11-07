@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Randers FC controllerstander</title>
+<link rel="icon" href="RandersFC_PS5_ControllerStand_ikon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Mono:wght@400&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+body { margin: 0 }
+/* Layout: tre standere side om side som på en bænk, hver med forsiden set lige forfra under 3D-billedet */
+:root {
+  --bg: #E9EDF3;
+  --surface: #F7F9FC;
+  --fg: #15203A;
+  --muted: #56617A;
+  --line: #C8D0DE;
+  --blue: #1D4FA0;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --ui: "Instrument Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #10151F; --surface: #171E2B; --fg: #E5EAF3; --muted: #97A2B8; --line: #2B3547; --blue: #6F9BE6; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #10151F; --surface: #171E2B; --fg: #E5EAF3; --muted: #97A2B8; --line: #2B3547; --blue: #6F9BE6; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 10px; max-width: 70ch; margin-bottom: 36px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.02; margin: 0;
+  text-transform: uppercase; letter-spacing: -.01em; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--blue); }
+header p { margin: 0; color: var(--muted); }
+.swatches { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.swatches span { display: inline-flex; align-items: center; gap: 6px; }
+.swatches i { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--line); }
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 980px) { .grid { grid-template-columns: 1fr; max-width: 640px; } }
+article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px;
+  display: grid; gap: 14px; align-content: start; min-width: 0; }
+.render { display: block; width: 100%; height: auto; border-radius: 4px; background: #ECEDEA; }
+.front { display: block; width: 100%; height: auto; padding: 14px 18px; box-sizing: border-box;
+  border: 1px dashed var(--line); border-radius: 4px; }
+.caption { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: -8px; }
+h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 26px; text-transform: uppercase;
+  display: flex; gap: 10px; align-items: baseline; }
+h2 .tag { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); text-transform: none; }
+article p { margin: 0; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 13.5px;
+  border-top: 1px solid var(--line); padding-top: 12px; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+dd { margin: 0; }
+
+.notes { margin-top: 36px; display: grid; gap: 10px; max-width: 76ch; }
+.notes h3 { margin: 0; font-size: 16px; }
+.notes ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 4px; }
+.notes b { color: var(--fg); font-weight: 600; }
+.notes a { color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">PS5-controllerstander · 118 × 60 × 63 mm · blå, hvid og sort</div>
+    <h1>Randers FC <em>på hylden</em></h1>
+    <p>En stander til en DualSense-controller med fodbold og Randers FC på forsiden. Standeren er et remix af OctaNiks PS5 Controller Stand. Forsiden er gjort plan, så standeren kan printes liggende med motivet ned mod pladen. Så bliver motivet skarpt og glat, og farverne skifter kun i de første tre lag.</p>
+    <div class="swatches" aria-label="Farver">
+      <span><i style="background: #1D4FA0"></i>Blå (krop)</span>
+      <span><i style="background: #F4F4F2"></i>Hvid</span>
+      <span><i style="background: #161616"></i>Sort (kun Bold)</span>
+    </div>
+  </header>
+
+  <section class="grid">
+    <article>
+      <img class="render" src="RandersFC_PS5_ControllerStand_bane.png" alt="Blå controllerstander med hvide kridtstreger: straffesparksfelt, målfelt, bue og RANDERS FC, SIDEN 2003">
+      <img class="front" src="RandersFC_PS5_ControllerStand_bane_forside.png" alt="Forsiden set lige forfra med banen">
+      <div class="caption">Forsiden set lige forfra</div>
+      <h2>Bane <span class="tag">2 farver</span></h2>
+      <p>Forsiden er en fodboldbane set fra målet. Kridtstregerne følger standerens kant, og straffesparksfeltet, målfeltet, buen og hjørnerne sidder nederst. Over feltet står RANDERS FC og SIDEN 2003.</p>
+      <dl>
+        <dt>Udtryk</dt><dd>Stadion, rent og grafisk</dd>
+        <dt>Mest</dt><dd>Blå, med tynde hvide streger</dd>
+        <dt>Print</dt><dd>Stregerne er 1,2 mm brede (3 baner)</dd>
+      </dl>
+    </article>
+
+    <article>
+      <img class="render" src="RandersFC_PS5_ControllerStand_bold.png" alt="Blå controllerstander med en stor sort og hvid fodbold over teksten RANDERS FC">
+      <img class="front" src="RandersFC_PS5_ControllerStand_bold_forside.png" alt="Forsiden set lige forfra med bolden">
+      <div class="caption">Forsiden set lige forfra</div>
+      <h2>Bold <span class="tag">3 farver</span></h2>
+      <p>En klassisk fodbold med sorte femkanter og hvide sekskanter, Ø 37 mm, midt på forsiden. Under den står RANDERS FC med store hvide bogstaver.</p>
+      <dl>
+        <dt>Udtryk</dt><dd>Kraftigt og legende</dd>
+        <dt>Mest</dt><dd>Blå, med en sort og hvid bold</dd>
+        <dt>Print</dt><dd>Sømmene er 0,8 mm. Kræver tre farver i AMS</dd>
+      </dl>
+    </article>
+
+    <article>
+      <img class="render" src="RandersFC_PS5_ControllerStand_troeje.png" alt="Blå controllerstander med en hvid spillertrøje med RANDERS og nummer 10">
+      <img class="front" src="RandersFC_PS5_ControllerStand_troeje_forside.png" alt="Forsiden set lige forfra med trøjen">
+      <div class="caption">Forsiden set lige forfra</div>
+      <h2>Trøje <span class="tag">2 farver</span></h2>
+      <p>En hvid spillertrøje med V-hals og striber på ærmer og kant. RANDERS og nummer 10 står i blåt, fordi standerens blå farve ses igennem. Nummeret kan skiftes, fx til ejerens yndlingsspiller.</p>
+      <dl>
+        <dt>Udtryk</dt><dd>Personligt, som en fantrøje</dd>
+        <dt>Mest</dt><dd>Blå, med en stor hvid flade</dd>
+        <dt>Print</dt><dd>Nummeret er ca. 18 mm højt</dd>
+      </dl>
+    </article>
+  </section>
+
+  <section class="notes">
+    <h3>Til valget</h3>
+    <ul>
+      <li><b>Mål:</b> 118 × 60 × 63 mm som originalen. Rillen, controlleren står i, er uændret. Kun den buede øverste del af forsiden er fyldt ud, så den er plan.</li>
+      <li><b>Print:</b> liggende på forsiden uden support, ca. 9 timer og ca. 78 g PLA. Motivet ligger i de første 3 lag (0,6 mm), så der er kun 2-5 farveskift.</li>
+      <li><b>Kan blandes:</b> fx Banens kridtstreger med Boldens fodbold i midtercirklen, eller trøjen med et navn i stedet for RANDERS.</li>
+      <li><b>Logo:</b> forslagene bruger klubbens navn og farver, men ikke det officielle klublogo.</li>
+      <li><b>Original:</b> <a href="https://makerworld.com/models/867623">PS5 Controller Stand</a> af OctaNik på MakerWorld, licens <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Remixet har samme licens.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
