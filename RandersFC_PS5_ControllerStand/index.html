@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Randers FC controllerstander</title>
+<title>Randers FC controllerholder</title>
 <link rel="icon" href="RandersFC_PS5_ControllerStand_ikon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Mono:wght@400&family=Instrument+Sans:wght@400;600&display=swap">
 <style>
 body { margin: 0 }
-/* Layout: tre standere side om side som på en bænk, hver med forsiden set lige forfra under 3D-billedet */
+/* Layout: tre holdere side om side som på en bænk, hver med forsiden set lige forfra under 3D-billedet. Bagsiden med nøglehullerne vises én gang under dem. */
 :root {
   --bg: #E9EDF3;
   --surface: #F7F9FC;
@@ -55,6 +55,13 @@ dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 
 dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 dd { margin: 0; }
 
+.back { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+@media (max-width: 980px) { .back { grid-template-columns: 1fr; max-width: 640px; box-sizing: border-box; } }
+.back h2 { margin-bottom: 10px; }
+.back p { margin: 0 0 10px; }
+.back dl { margin-top: 4px; }
+
 .notes { margin-top: 36px; display: grid; gap: 10px; max-width: 76ch; }
 .notes h3 { margin: 0; font-size: 16px; }
 .notes ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 4px; }
@@ -65,9 +72,9 @@ dd { margin: 0; }
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">PS5-controllerstander · 118 × 60 × 63 mm · mørkeblå, hvid og sort</div>
-    <h1>Randers FC <em>på hylden</em></h1>
-    <p>En stander til en DualSense-controller med Randers FC's logo på forsiden. Standeren er et remix af OctaNiks PS5 Controller Stand. Forsiden er gjort plan, så standeren kan printes liggende med motivet ned mod pladen. Så bliver logoet skarpt, og farverne skifter kun i de første tre lag.</p>
+    <div class="eyebrow">PS5-controllerholder til væggen · 118 × 60 × 63 mm · mørkeblå, hvid og sort</div>
+    <h1>Randers FC <em>på væggen</em></h1>
+    <p>En holder til en DualSense-controller med Randers FC's logo på forsiden. Den hænger på væggen på to skruer. Holderen er et remix af OctaNiks PS5 Controller Stand. Bagsiden er lukket og plan og har to skjulte nøglehuller. Forsiden er også gjort plan, så holderen kan printes liggende med motivet ned mod pladen. Så bliver logoet skarpt, og farverne skifter kun i de første tre lag.</p>
     <div class="swatches" aria-label="Farver">
       <span><i style="background: #00285F"></i>Mørkeblå (krop, klubbens blå)</span>
       <span><i style="background: #F4F4F2"></i>Hvid</span>
@@ -77,7 +84,7 @@ dd { margin: 0; }
 
   <section class="grid">
     <article>
-      <img class="render" src="RandersFC_PS5_ControllerStand_logo.png" alt="Mørkeblå controllerstander med Randers FC's hvide logo, hesten i ruderammen, stort midt på forsiden">
+      <img class="render" src="RandersFC_PS5_ControllerStand_logo_vaeg.png" alt="Mørkeblå controllerholder til væggen med Randers FC's hvide logo, hesten i ruderammen, stort midt på forsiden">
       <img class="front" src="RandersFC_PS5_ControllerStand_logo_forside.png" alt="Forsiden set lige forfra med logoet">
       <div class="caption">Forsiden set lige forfra</div>
       <h2>Logo <span class="tag">2 farver</span></h2>
@@ -90,7 +97,7 @@ dd { margin: 0; }
     </article>
 
     <article>
-      <img class="render" src="RandersFC_PS5_ControllerStand_bane.png" alt="Mørkeblå controllerstander med hvide kridtstreger: en bane på tværs med logoet i midten og et straffesparksfelt i hver side">
+      <img class="render" src="RandersFC_PS5_ControllerStand_bane_vaeg.png" alt="Mørkeblå controllerholder til væggen med hvide kridtstreger: en bane på tværs med logoet i midten og et straffesparksfelt i hver side">
       <img class="front" src="RandersFC_PS5_ControllerStand_bane_forside.png" alt="Forsiden set lige forfra med banen og logoet">
       <div class="caption">Forsiden set lige forfra</div>
       <h2>Bane <span class="tag">2 farver</span></h2>
@@ -103,7 +110,7 @@ dd { margin: 0; }
     </article>
 
     <article>
-      <img class="render" src="RandersFC_PS5_ControllerStand_bold.png" alt="Mørkeblå controllerstander med Randers FC-logoet til venstre og en sort og hvid fodbold til højre">
+      <img class="render" src="RandersFC_PS5_ControllerStand_bold_vaeg.png" alt="Mørkeblå controllerholder til væggen med Randers FC-logoet til venstre og en sort og hvid fodbold til højre">
       <img class="front" src="RandersFC_PS5_ControllerStand_bold_forside.png" alt="Forsiden set lige forfra med logo og bold">
       <div class="caption">Forsiden set lige forfra</div>
       <h2>Bold <span class="tag">3 farver</span></h2>
@@ -116,11 +123,25 @@ dd { margin: 0; }
     </article>
   </section>
 
+  <section class="back">
+    <img class="render" src="RandersFC_PS5_ControllerStand_bane_vaeg_bagside.png" alt="Holderen set skråt bagfra: en plan bagside med to nøglehuller, hvor slidsen går opad fra et rundt hul">
+    <div>
+      <h2>Bagsiden <span class="tag">ens for alle tre</span></h2>
+      <p>Rummet bag rygstøtten er fyldt ud, så bagsiden er plan og ligger helt ind mod væggen. Rillen, controlleren står i, er uændret. I bagsiden er der to nøglehuller med 60 mm imellem. Skru to skruer i væggen, så hovederne stikker 4-5 mm ud. Sæt holderen ind over dem, og skub den 11 mm ned. Så sidder skruehovederne skjult bag en 2,6 mm væg.</p>
+      <dl>
+        <dt>Skruer</dt><dd>2 stk. 4 mm med rundt hoved på højst 9 mm, fx 4 × 30 mm med rawlplug</dd>
+        <dt>Placering</dt><dd>Vandret, 60 mm mellem skruerne. Hullerne sidder 36 mm over holderens bund</dd>
+        <dt>Tip</dt><dd>Brug et vaterpas, og sæt skruerne i samme højde</dd>
+      </dl>
+    </div>
+  </section>
+
   <section class="notes">
     <h3>Til valget</h3>
     <ul>
-      <li><b>Mål:</b> 118 × 60 × 63 mm som originalen. Rillen, controlleren står i, er uændret. Kun den buede øverste del af forsiden er fyldt ud, så den er plan.</li>
-      <li><b>Print:</b> liggende på forsiden uden support, ca. 9 timer og ca. 78 g PLA. Motivet ligger i de første 3 lag (0,6 mm), så der er kun 2-5 farveskift.</li>
+      <li><b>Mål:</b> 118 × 60 × 63 mm som originalen. Rillen, controlleren står i, er uændret. Den buede øverste del af forsiden og rummet bag rygstøtten er fyldt ud.</li>
+      <li><b>Print:</b> liggende på forsiden uden support, ca. 11 timer og ca. 97 g PLA. Motivet ligger i de første 3 lag (0,6 mm), så der er kun 2-5 farveskift. Bagsiden ligger øverst. Bambu Studio advarer om to små udhæng: kanterne langs slidserne i nøglehullerne, som er 2,7 mm. De kan godt printes uden support.</li>
+      <li><b>Til bordet:</b> De første udgaver uden nøglehuller ligger stadig i repoet (fx <code>RandersFC_PS5_ControllerStand_bane.3mf</code>). De tager ca. 9 timer og bruger 78 g.</li>
       <li><b>Logoet:</b> er hentet som vektor fra randersfc.dk. Bogstaverne i buen er meget tynde. Hvor logoet er under 55 mm, er de gjort en anelse federe, så de er mindst 0,46 mm og kan printes med en 0,4 mm dyse.</li>
       <li><b>Kan blandes:</b> fx Banens kridtstreger omkring det store logo fra Logo.</li>
       <li><b>Original:</b> <a href="https://makerworld.com/models/867623">PS5 Controller Stand</a> af OctaNik på MakerWorld, licens <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Logoet tilhører Randers FC og er kun til personligt brug.</li>
