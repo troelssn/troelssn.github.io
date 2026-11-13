@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M720q under bordet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+body { margin: 0 }
+/* Layout: tre tegningskort side om side på bred skærm, hver med pc'en i holderen og holderen alene */
+:root {
+  --bg: #ECEDEA;
+  --surface: #F8F8F6;
+  --fg: #1C1E21;
+  --muted: #5D636B;
+  --line: #CDD0D2;
+  --accent: #C8102E;
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --ui: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #16181A; --surface: #1F2225; --fg: #E7E9EB; --muted: #9AA1A9; --line: #33383D; --accent: #F0485E; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #16181A; --surface: #1F2225; --fg: #E7E9EB; --muted: #9AA1A9; --line: #33383D; --accent: #F0485E; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 10px; max-width: 70ch; margin-bottom: 36px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-size: clamp(30px, 4.4vw, 44px); line-height: 1.08; margin: 0; font-weight: 600; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--accent); }
+header p { margin: 0; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.shots { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.shots img { display: block; width: 100%; height: 240px; object-fit: contain; background: #ECEDEA; border-radius: 4px; }
+.shots img.small { height: 150px; }
+.shots figcaption { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+h2 { margin: 0; font-family: var(--display); font-size: 24px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+h2 .tag { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
+article p { margin: 0; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 13.5px; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+section.more { margin-top: 40px; display: grid; gap: 12px; max-width: 80ch; }
+section.more h3 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 600; }
+section.more ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+section.more b { color: var(--fg); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Lenovo ThinkCentre M720q Tiny · 179 × 183 × 37 mm · Home Assistant</div>
+    <h1>Mini-pc'en <em>under bordet</em>, skruet fast og nem at tage ud</h1>
+    <p>Tre måder at hænge Home Assistant-maskinen op under skrivebordet. I alle tre glider pc'en ind forfra og kan tages ud uden værktøj. Holderen skrues op i bordpladen med 4 mm undersænkede træskruer. Bagsiden er åben, så kablerne kan sidde i.</p>
+  </header>
+
+  <section class="grid">
+    <article>
+      <figure class="shots">
+        <img src="M720q_holder_skinner_med_pc.png" alt="Pc'en set nedefra, liggende i to skinner skruet op under bordet">
+        <img class="small" src="M720q_holder_skinner.png" alt="De to skinner alene, set ovenfra">
+        <figcaption>Set nedefra med pc'en · skinnerne alene</figcaption>
+      </figure>
+      <h2>Skinner <span class="tag">to dele</span></h2>
+      <p>To skinner med en læbe, som pc'en ligger på. Pc'en skubbes ind forfra, til den rammer stoppet bagtil, og så klikker en fjedertunge op foran den. Træk tappen under tungen ned, så kan pc'en trækkes ud. Siderne er åbne, så der er mest luft.</p>
+      <dl>
+        <dt>Under bordet</dt><dd>229 mm bred, 196 mm dyb, hænger 43 mm ned</dd>
+        <dt>Skruer</dt><dd>6 (3 pr. skinne)</dd>
+        <dt>Ind / ud</dt><dd>Klik-lås foran</dd>
+        <dt>Print</dt><dd>Ca. 13 t, 113 g. Står op med bagenden nedad</dd>
+        <dt>Pas på</dt><dd>Afstanden mellem skinnerne skal passe. Skru den ene fast, og sæt den anden med pc'en imellem</dd>
+      </dl>
+    </article>
+
+    <article>
+      <figure class="shots">
+        <img src="M720q_holder_kappe_med_pc.png" alt="Pc'en set nedefra i en lukket kappe med rudeformede huller">
+        <img class="small" src="M720q_holder_kappe.png" alt="Kappen alene, set ovenfra med rudehuller i loftet">
+        <figcaption>Set nedefra med pc'en · kappen alene</figcaption>
+      </figure>
+      <h2>Kappe <span class="tag">én del</span></h2>
+      <p>Én samlet kappe, der omslutter pc'en på siderne og foroven. Bunden er åben på midten, og loft og sider har rudehuller, så varmen kan slippe ud. Klik-låsen er den samme som i Skinner. Det er den mest færdige løsning, og der er ingen afstand at måle.</p>
+      <dl>
+        <dt>Under bordet</dt><dd>219 mm bred, 196 mm dyb, hænger 45 mm ned</dd>
+        <dt>Skruer</dt><dd>6</dd>
+        <dt>Ind / ud</dt><dd>Klik-lås foran</dd>
+        <dt>Print</dt><dd>Ca. 21 t, 167 g. Står op med bagenden nedad og fylder næsten pladen</dd>
+        <dt>Pas på</dt><dd>Længste print. Skal passe første gang</dd>
+      </dl>
+    </article>
+
+    <article>
+      <figure class="shots">
+        <img src="M720q_holder_lodret_med_pc.png" alt="Pc'en står på højkant i to U-bøjler under bordet">
+        <img class="small" src="M720q_holder_lodret.png" alt="De to U-bøjler alene">
+        <figcaption>Set nedefra med pc'en · bøjlerne alene</figcaption>
+      </figure>
+      <h2>Lodret <span class="tag">to dele</span></h2>
+      <p>Pc'en står på højkant i to U-bøjler, som hænger fra bordpladen. Den fylder kun 8 cm i bredden og kan sidde helt ude ved et bordben eller en væg. Den bageste bøjle har en kant, som pc'en stopper mod. Der er ingen lås, men pc'en hviler med sin egen vægt i bøjlerne.</p>
+      <dl>
+        <dt>Under bordet</dt><dd>83 mm bred, 187 mm dyb, hænger 190 mm ned</dd>
+        <dt>Skruer</dt><dd>4 (2 pr. bøjle)</dd>
+        <dt>Ind / ud</dt><dd>Glider ind forfra, ingen lås</dd>
+        <dt>Print</dt><dd>Ca. 11 t, 97 g. Ligger fladt, hurtigst</dd>
+        <dt>Pas på</dt><dd>Hænger langt ned, så den skal sidde, hvor knæene ikke rammer</dd>
+      </dl>
+    </article>
+  </section>
+
+  <section class="more">
+    <h3>Findes allerede</h3>
+    <ul>
+      <li><b><a href="https://makerworld.com/en/models/1955622">Lenovo Tiny PC Under Desk Mount</a></b> (MakerWorld): en enkel bøjle til M710, M720, M910 og M920. Pc'en står på sine gummifødder, og der er stop bagtil. Forfatteren printede den i ASA.</li>
+      <li><b><a href="https://makerworld.com/en/models/1884017">Lenovo ThinkCentre TFF PC Under Desk Mount</a></b> (MakerWorld): venstre og højre ramme med kabelkroge og plads til den originale 65 W-strømforsyning ved siden af pc'en.</li>
+      <li><b><a href="https://www.printables.com/model/720253-lenovo-thinkcentre-wall-and-under-desk-mount">LENOVO ThinkCentre Wall and Under-Desk Mount</a></b> (Printables): til både væg og bord, nævner M720q direkte.</li>
+      <li><b>Lenovos eget beslag</b> (0B47097, Tiny Under Desk Mount Bracket) kan købes. Det er ikke bekræftet, at M720q står på listen over modeller, det passer til.</li>
+    </ul>
+    <h3>Til valget</h3>
+    <ul>
+      <li><b>Materiale:</b> PLA kan bruges, for pc'en bliver kun lunken. PETG holder bedre, hvis pc'en sidder lige over en radiator, eller hvis læben skal bære i mange år.</li>
+      <li><b>Skruer:</b> 4 mm undersænkede træskruer, fx 4 × 16 mm til en bordplade på mindst 18 mm. Hullerne er Ø 4,5 mm med undersænkning nedefra.</li>
+      <li><b>Mål:</b> pc'en er 179 × 183 × 34,5 mm, 37 mm med gummifødder. Der er 1 mm luft på siderne og 1,5 mm over pc'en, så fødderne kan blive siddende.</li>
+      <li><b>Strømforsyningen</b> er ikke med i forslagene. Den kan få sin egen lille holder ved siden af.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
