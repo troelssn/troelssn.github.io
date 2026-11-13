@@ -19,3 +19,4 @@ Hvert projekt har sin egen mappe med en `index.html`, fx `mindre/` → https://t
 | [`tryllestav/`](tryllestav/) | Designforslag til en tryllestav i sort, brun og mos |
 | [`HSK_SpillerMagnet/`](HSK_SpillerMagnet/) | Spillermagnet formet som en HSK-trøje med hest og navn |
 | [`RandersFC_PS5_ControllerStand/`](RandersFC_PS5_ControllerStand/) | Designforslag til en PS5-controllerholder til væggen med Randers FC-logo |
+| [`M720q_holder/`](M720q_holder/) | Designforslag til en holder til Lenovo M720q mini-pc'en under skrivebordet |
